@@ -21,6 +21,7 @@ const puppeteer = require('puppeteer');
         return website.getAttribute('href')
     })
     const newPage = await browser.newPage();
+    await newPage.setViewport({ width: 1800, height: 900 });
     await newPage.goto(href);
 
     await page.screenshot({ path: 'google.png' });
